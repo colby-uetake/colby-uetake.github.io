@@ -11,6 +11,8 @@
       var h = window.innerHeight
       //create variable to store our sound file
       var boing
+      //create variable called fireball
+      var fireball
       
       //create preload function
       function preload(){
@@ -20,6 +22,7 @@
       
       function setup(){
         createCanvas(w,h)
+        fireball = loadImage("fireball.png")
       }
       function draw(){
         //when someone presses spacebar
@@ -27,6 +30,8 @@
           //play the sound
           boing.play
         }
+        //image(variablename,x,y,height)
+        image(fireball,w/2,h/2,100,100)
       }
     </script>
   </body>
