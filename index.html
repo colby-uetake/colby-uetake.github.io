@@ -13,15 +13,10 @@
       var char
       var char2
       
-      function preload(){
-        panzer = loadImage('panzer.png')
-      }
-      
       function setup(){
         createCanvas(w,h)
         panzer = new panzer()
         char = new char()
-        image(panzer, 0, 0)
       }
       
       function draw(){
@@ -40,8 +35,8 @@
         this.velocity = 10
         this.lift = -5
         this.show = function(){
-          //fill(color('red'))
-          //ellipse(this.x,this.y,50,50)
+          fill(color('red'))
+          ellipse(this.x,this.y,50,50)
           //panzer.loadImage("panzer.png")
         }
         this.update = function(){
