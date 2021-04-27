@@ -10,13 +10,13 @@
       var w = window.innerWidth
       var h = window.innerHeight
       var panzer
-      var char
-      var char2
+      var lechar
       
       function setup(){
         createCanvas(w,h)
         panzer = new panzer()
-        char = new char()
+        lechar = new lechar()
+        window.alert("Press Spacebar to Jump and Try to Avoid Enemies")
       }
       
       function draw(){
@@ -26,8 +26,9 @@
         if (keyIsDown(32)){
           panzer.jump()
         }
+        lechar.show()
       }
-      
+        
       function panzer(){
         this.x = w/2
         this.y = h/2
@@ -37,7 +38,6 @@
         this.show = function(){
           fill(color('red'))
           ellipse(this.x,this.y,50,50)
-          //panzer.loadImage("panzer.png")
         }
         this.update = function(){
           this.velocity += this.gravity
@@ -58,14 +58,14 @@
         }
       }
       
-      function char(){
-        this.x = w/2
-        this.y = h/2
+      function lechar(){
+        this.x = w/1
+        this.y = h/1.1
         this.show = function(){
-          fill(color('black'))
-          ellipse(this.x,this.y,50,50)
+            fill(color('black'))
+            rect(this.x,this.y,50,50)
+            this.x = this.x + random(-15,0)
         }
-        
       }
     </script>
   </body>
